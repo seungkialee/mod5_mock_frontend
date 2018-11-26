@@ -1,0 +1,28 @@
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(0,0,0,0.4);
+  -webkit-animaton-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-content {
+  /* width: 86%; */
+  height: 400px;
+  position: relative;
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;,
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  overflow: scroll;
+
+}

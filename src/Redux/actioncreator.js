@@ -20,3 +20,31 @@ export const login = (username, password) => {
       );
   };
 };
+
+export const fetchUser = token => {
+  return dispatch => {
+    fetch("http://localhost:3001/api/v1/users", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        Accept: "application/json",
+        Authorization: token
+      }
+    })
+      .then(res => res.json())
+      .then(user => {
+        dispatch({
+          type: "GET_USER",
+          payload: user
+        });
+      });
+  };
+};
+
+export const logOut = () => {
+  return dispatch => {
+    dispatch({
+      type: "LOG_OUT_USER"
+    });
+  };
+};
