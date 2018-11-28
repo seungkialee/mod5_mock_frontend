@@ -20,7 +20,11 @@ class LoginContainer extends Component {
   submitHandler = event => {
     event.preventDefault();
     this.props.login(this.state)
-    this.props.history.push("/main")
+    if (this.props.currentUser === null) {
+      this.props.history.push("/login")
+    } else {
+      this.props.history.push("/main")
+    }
   };
 
   render() {

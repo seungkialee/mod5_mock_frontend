@@ -1,5 +1,6 @@
 const initialState = {
-  currentUser: null
+  currentUser: {},
+  accounts: []
   // authCurrentUser: null
   // loggedIn: false
 };
@@ -7,7 +8,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "LOG_IN":
-      console.log("payload", action.payload);
       localStorage.setItem("token", action.payload.jwt);
       return {...state, currentUser: action.payload};
 
@@ -19,8 +19,11 @@ const reducer = (state = initialState, action) => {
 
     case "LOG_OUT_USER":
       localStorage.removeItem("token");
-      return {...state, currentUser: null};
+      return {...state, currentUser: {}};
 
+    case "FETCH_ACCOUNTS":
+      console.log("payload", action.payload);
+      return {...state, accounts: action.payload};
     default:
       return state;
   }
