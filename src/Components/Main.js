@@ -1,31 +1,23 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {Link, withRouter} from "react-router-dom";
-import {logOut} from "../Redux/actioncreator";
+import {Link} from "react-router-dom";
+import {logOut, fetchUser} from "../Redux/actioncreator";
 import AccountContainer from './AccountContainer'
-import "../stylesheets/NewAccount.css";
 // import NewAccount from "./NewAccount";
 
 class Main extends Component {
-  state = {
-    showAccountOpener: false
-  };
+  componentDidMount() {
+    if (localStorage.getItem('token')) {
+      this.props.fetchUser(localStorage.token)
+    }
+  }
 
   handleLogOut = event => {
     this.props.logOut();
   };
 
-  openAccountHandler = event => {
-    this.setState({showAccountOpener: true});
-  };
-
-  closeAccountHandler = event => {
-    if (event.target.className === "modal") {
-      this.setState({showAccountOpener: false});
-    }
-  };
   render() {
-    console.log("afterLogin State", this.props.currentUser[0]);
+    console.log("this.props.currentUser", this.props.currentUser);
     return (<div>
       <Link to="/login" onClick={this.handleLogOut}>
         Log Out
@@ -38,4 +30,4 @@ class Main extends Component {
 const mapStateToProps = state => {
   return {currentUser: state.currentUser}
 };
-export default connect(mapStateToProps, {logOut})(Main);
+export default connect(mapStateToProps, {logOut, fetchUser})(Main);

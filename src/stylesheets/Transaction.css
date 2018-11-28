@@ -16,7 +16,6 @@
 }
 
 .modal-content {
-  /* width: 86%; */
   height: 400px;
   position: relative;
   -webkit-animation-name: slideIn;

@@ -1,6 +1,5 @@
 const initialState = {
-  currentUser: {},
-  accounts: []
+  currentUser: {}
   // authCurrentUser: null
   // loggedIn: false
 };
