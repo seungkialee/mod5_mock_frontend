@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {logOut, fetchUser} from "../Redux/actioncreator";
 import AccountContainer from './AccountContainer'
 // import NewAccount from "./NewAccount";
+import '../stylesheets/Main.css'
 
 class Main extends Component {
   componentDidMount() {
@@ -19,9 +20,11 @@ class Main extends Component {
   render() {
     console.log("this.props.currentUser", this.props.currentUser);
     return (<div>
-      <Link to="/login" onClick={this.handleLogOut}>
-        Log Out
-      </Link>
+      <div className="top-nav">
+        <Link to="/login" onClick={this.handleLogOut} className="log-out">
+          Log Out
+        </Link>
+      </div>
       <AccountContainer/>
     </div>)
   }

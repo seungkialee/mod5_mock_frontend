@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import TransactionDetail from "./TransactionDetail";
+import '../stylesheets/Account.css'
 
 class AccountCard extends Component {
   state = {
@@ -7,7 +8,7 @@ class AccountCard extends Component {
   };
 
   closeDetailHandler = event => {
-    if (event.target.className === "modal") {
+    if (event.target.className === "show-detail") {
       this.setState({showAccountOpener: false});
     }
   };
@@ -20,15 +21,23 @@ class AccountCard extends Component {
     if (this.state.showAccountOpener === true) {
       return (<div>
         <TransactionDetail close={this.closeDetailHandler} accId={this.props.accObj.id}/>
-        <div onClick={this.clickHandler}>
-          <div>{this.props.accObj.account_type}</div>
-          <div>{this.props.accObj.balance}</div>
+        <div className="account" onClick={this.clickHandler}>
+          <div>
+            <h1>{this.props.accObj.account_type}</h1>
+          </div>
+          <div>
+            <h1>Current Balance: ${this.props.accObj.balance}</h1>
+          </div>
         </div>
       </div>);
     } else {
-      return (<div onClick={this.clickHandler}>
-        <div>{this.props.accObj.account_type}</div>
-        <div>{this.props.accObj.balance}</div>
+      return (<div className="account" onClick={this.clickHandler}>
+        <div>
+          <h1>{this.props.accObj.account_type}</h1>
+        </div>
+        <div>
+          <h1>Current Balance: ${this.props.accObj.balance}</h1>
+        </div>
       </div>);
     }
   }

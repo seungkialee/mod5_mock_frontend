@@ -9,14 +9,13 @@ const TransactionDetail = props => {
   let accTransactions = props.currentUser.transactions.filter(transObj => {
     return transObj.account_id === props.accId;
   });
-  let transMap = accTransactions.map(transObj => (
-    <TransCard trans={transObj} />
-  ));
-  return (
-    <div onClick={props.close} className="modal">
-      <div className="modal-content">{transMap}</div>
+  let transMap = accTransactions.map(transObj => (<TransCard trans={transObj}/>));
+  return (<div>
+    <div onClick={props.close} className="detail">
+      <div className="">
+        {transMap}</div>
     </div>
-  );
+  </div>)
 };
 
 const mapStateToProps = state => {

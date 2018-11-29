@@ -20,51 +20,22 @@ export const login = (username, password) => {
       );
   };
 };
-//
-// export const fetchAccounts = user_id => {
-//   return dispatch => {
-//     fetch(`http://localhost:3001/api/v1/accounts/${user_id}`, {
-//       method: "GET",
-//       headers: {"Content-Type": "application/json"}
-//     })
-//       .then(resp => resp.json())
-//       .then(accounts => {
-//         dispatch({
-//           type: "FETCH_ACCOUNTS",
-//           payload: accounts
-//         });
-//       });
-//   };
-// };
-
-//code to create bank_account
-// export const createAccount = (
-//   type: string,
-//   balance: string,
-//   userId: string
-// ) => {
-//   return dispatch => {
-//     fetch("http://localhost:3001/api/v1/accounts", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Accept: "application/json"
-//       },
-//       body: JSON.stringify({
-//         account_type: type,
-//         balance: balance,
-//         user_id: userId
-//       })
-//     })
-//       .then(resp => resp.json())
-//       .then(account => {
-//         dispatch({
-//           type: "CREATE_ACCOUNT",
-//           payload: account
-//         });
-//       });
-//   };
-// };
+//create new user
+// fetch('http://localhost:3001/api/v1/users', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     Accept: 'application/json'
+//   },
+//   body: JSON.stringify({
+//     user: {
+//       username: 'test3',
+//       password: "1",
+//     }
+//   })
+// })
+//   .then(r => r.json())
+//   .then(console.log)
 
 export const fetchUser = token => {
   return dispatch => {

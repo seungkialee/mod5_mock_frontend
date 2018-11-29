@@ -28,18 +28,21 @@ class LoginContainer extends Component {
   };
 
   render() {
-    return (<div id="login">
-      <form onSubmit={this.submitHandler}>
+    return (<form autoComplete="off" className="login" onSubmit={this.submitHandler}>
+      <div className="text-box">
+        <i class="fa fa-user"></i>
         <input type="text" name="username" placeholder="Username" onChange={this.handleChange}/>
+      </div>
+      <div className="text-box">
+        <i class="fa fa-lock"></i>
         <input type="password" name="password" placeholder="Password" onChange={this.handleChange}/>
-        <input type="submit" value="Login"/>
-      </form>
-    </div>)
+      </div>
+      <input className="login-button" type="submit" value="Login"/>
+    </form>)
   }
 }
 const mapStateToProps = state => {
   console.log("currentUser", state);
   return {currentUser: state.currentUser};
 };
-
 export default connect(mapStateToProps, {login})(LoginContainer);
