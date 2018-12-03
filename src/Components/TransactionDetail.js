@@ -10,11 +10,9 @@ const TransactionDetail = props => {
     return transObj.account_id === props.accId;
   });
   let transMap = accTransactions.map(transObj => (<TransCard trans={transObj}/>));
-  return (<div>
-    <div onClick={props.close} className="detail">
-      <div className="">
-        {transMap}</div>
-    </div>
+  return (<div onClick={props.close}>
+    <div className="detail">
+      {transMap}</div>
   </div>)
 };
 

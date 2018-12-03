@@ -8,9 +8,7 @@ class AccountCard extends Component {
   };
 
   closeDetailHandler = event => {
-    if (event.target.className === "show-detail") {
-      this.setState({showAccountOpener: false});
-    }
+    this.setState({showAccountOpener: false});
   };
 
   clickHandler = event => {
@@ -22,21 +20,17 @@ class AccountCard extends Component {
       return (<div>
         <TransactionDetail close={this.closeDetailHandler} accId={this.props.accObj.id}/>
         <div className="account" onClick={this.clickHandler}>
-          <div>
-            <h1>{this.props.accObj.account_type}</h1>
-          </div>
-          <div>
-            <h1>Current Balance: ${this.props.accObj.balance}</h1>
-          </div>
+          <h1 className="account-type">{this.props.accObj.account_type}</h1>
+          <h1 className="balance">Current Balance: ${this.props.accObj.balance}</h1>
+          <button className="button">Transfer</button>
         </div>
       </div>);
     } else {
-      return (<div className="account" onClick={this.clickHandler}>
-        <div>
-          <h1>{this.props.accObj.account_type}</h1>
-        </div>
-        <div>
-          <h1>Current Balance: ${this.props.accObj.balance}</h1>
+      return (<div onClick={this.clickHandler}>
+        <div className="account">
+          <h1 className="account-type">{this.props.accObj.account_type}</h1>
+          <h1 className="balance">Current Balance: ${this.props.accObj.balance}</h1>
+          <button className="button">Transfer</button>
         </div>
       </div>);
     }
