@@ -15,5 +15,19 @@
 
 .log-out:hover {
   background-color: #ddd;
-   color: black;
+  color: black;
+}
+
+.transfer-btn {
+  font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  text-align: center;
+  float: left;
+  padding: 14px 18px;
+  font-size: 17px;
+}
+
+.transfer-btn:hover {
+  background-color: #ddd;
+  color: black;
 }

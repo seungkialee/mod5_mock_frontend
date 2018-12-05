@@ -20,21 +20,21 @@ class LoginContainer extends Component {
   submitHandler = event => {
     event.preventDefault();
     this.props.login(this.state)
-    if (this.props.currentUser === null) {
-      this.props.history.push("/login")
-    } else {
-      this.props.history.push("/main")
-    }
+    // if (this.props.currentUser.hasOwnProperty("error")) {
+    //   this.props.history.push("/login")
+    // } else {
+    this.props.history.push("/main")
+    // }
   };
 
   render() {
     return (<form autoComplete="off" className="login" onSubmit={this.submitHandler}>
       <div className="text-box">
-        <i class="fa fa-user"></i>
+        <i className="fa fa-user"></i>
         <input type="text" name="username" placeholder="Username" onChange={this.handleChange}/>
       </div>
       <div className="text-box">
-        <i class="fa fa-lock"></i>
+        <i className="fa fa-lock"></i>
         <input type="password" name="password" placeholder="Password" onChange={this.handleChange}/>
       </div>
       <input className="login-button" type="submit" value="Login"/>

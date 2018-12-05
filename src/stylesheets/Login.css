@@ -26,7 +26,7 @@ body {
 
 .text-box i {
   width: 26px;
-  float:left;
+  float: left;
   text-align: center;
 }
 
@@ -38,7 +38,7 @@ body {
   font-size: 18px;
   width: 90%;
   float: left;
-  margin: 0 10px;
+  /* margin: 0 10px; */
   font-size: 1.5em;
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 1px;
@@ -57,7 +57,7 @@ body {
 
 
 .login-button {
-  width: 90%;
+  width: 100%;
   background: #2773c1;
   border: none;
   color: white;
