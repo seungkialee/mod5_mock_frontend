@@ -1,0 +1,29 @@
+.account {
+  height: 20rem;
+  float: left;
+  display: inline-block;
+}
+
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  /* text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000 */
+}
+
+text {
+  color: white;
+  font-size: 2em;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+
+}
