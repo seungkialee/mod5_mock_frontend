@@ -1,22 +1,23 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import LoginContainer from "./Components/LoginContainer";
-import Main from "./Components/Main"
-import {connect} from 'react-redux'
-import {withRouter, Route} from 'react-router-dom'
-import './App.css'
+import Main from "./Components/Main";
+import { connect } from "react-redux";
+import { withRouter, Route, Redirect } from "react-router-dom";
+import "./App.css";
 
 class App extends Component {
   render() {
-    return (<div className="App">
-      <Route path="/main" component={Main}/>
-      <Route path='/login' component={LoginContainer}/>
-    </div>);
+    return (
+      <div>
+        <Route exact path="/" component={() => <Redirect to="/login" />} />
+        <Route path="/login" component={LoginContainer} />
+        <Route path="/main" component={Main} />
+      </div>
+    );
   }
-} // console.log(mapStateToProps)
-
-const mapStateToProps = (state) => {
-  // console.log("mappedState", state)
-  return {loggedIn: state.loggedIn, currentUser: state.currentUser}
-
 }
-export default connect(mapStateToProps)(App);
+
+const mapStateToProps = state => {
+  return { loggedIn: state.loggedIn, currentUser: state.currentUser };
+};
+export default withRouter(connect(mapStateToProps)(App));
