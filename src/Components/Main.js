@@ -34,9 +34,11 @@ class Main extends Component {
     }
   };
 
+  closeModal = event => {
+    this.setState({ showTransferPage: false });
+  };
+
   render() {
-    console.log("this.props.currentUser", this.props.currentUser);
-    console.log("receiveAcc", this.props.receiveAcc);
     if (this.state.showTransferPage === false) {
       return (
         <div>
@@ -63,7 +65,10 @@ class Main extends Component {
             </div>
           </div>
           <AccountContainer />
-          <TransferPage closePage={this.closePage} />
+          <TransferPage
+            closeModal={this.closeModal}
+            closePage={this.closePage}
+          />
         </div>
       );
     }
